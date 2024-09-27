@@ -1,0 +1,7 @@
+-r requirements.txt
+black
+pylint
+mkdocs-material
+mkdocstrings[python]
+mypy
+maya-stubs

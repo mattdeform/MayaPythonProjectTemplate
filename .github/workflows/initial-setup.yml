@@ -1,0 +1,58 @@
+name: initial repository setup
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  USER_NAME: ${{ github.repository_owner }}
+  PROJECT_NAME: ${{ github.event.repository.name }}
+  PROJECT_DESC: ${{ github.event.repository.description }}
+
+jobs:
+  setup:
+    if: github.repository != 'mattdeform/MayaPythonProjectTemplate'
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
+      
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Rename README.md and delete setup workflow
+        run: |
+          # Delete template LICENSE
+          rm -f LICENSE
+          
+          # Delete existing README.md
+          rm -f README.md
+          
+          # Rename _README.md to README.md
+          mv _README.md README.md
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Run initial setup script
+        run: |
+          python initial_setup.py
+
+      - name: Remove setup files
+        run: |
+          rm -f initial_setup.py
+          rm -f .github/workflows/initial-setup.yml
+
+      - name: Commit and push changes
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m "Initial repository setup completed by GitHub Actions"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

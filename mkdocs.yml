@@ -1,0 +1,22 @@
+site_name: {{SITE_NAME}}
+theme:
+  name: material
+  language: en
+  palette:
+    - scheme: slate
+      primary: blue
+      accent: teal
+
+  plugins:
+  - search:
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          rendering:
+            show_source: true
+      watch:
+        - src
+
+nav:
+  - index.md

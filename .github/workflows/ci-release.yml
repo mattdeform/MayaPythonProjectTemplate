@@ -1,0 +1,30 @@
+name: Release
+
+on:
+  workflow_dispatch:
+
+jobs:
+
+  static-analysis:
+    if: github.repository != 'mattdeform/MayaPythonProjectTemplate'
+    uses: ./.github/workflows/reusable-static-analysis.yml
+
+  tests:
+    needs: static-analysis
+    if: github.repository != 'mattdeform/MayaPythonProjectTemplate'
+    uses: ./.github/workflows/reusable-maya-tests.yml
+
+  do_release:
+    if: github.repository != 'mattdeform/MayaPythonProjectTemplate'
+    needs: [static-analysis, tests]
+    uses: ./.github/workflows/reusable-semantic-release.yml
+    permissions:
+      contents: write
+      id-token: write
+
+  docs:
+    if: github.repository != 'mattdeform/MayaPythonProjectTemplate'
+    needs: [static-analysis, tests, do_release]  # only build docs when release is successful
+    uses: ./.github/workflows/reusable-build-and-deploy-docs.yml
+    permissions:
+      contents: write
