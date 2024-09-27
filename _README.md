@@ -137,7 +137,7 @@ Development and contribution guidelines can be found on the [CONTRIBUTING.md](CO
 <!-- LICENSE -->
 ## License
 
-Distributed under the `insert_license_name` License. See `LICENSE` file for more information.
+Distributed under the `insert_license_name` license. See `LICENSE` file for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
