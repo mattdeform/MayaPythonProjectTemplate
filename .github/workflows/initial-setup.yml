@@ -32,6 +32,12 @@ jobs:
           
           # Rename _README.md to README.md
           mv _README.md README.md
+          
+          # Delete the template logo placeholder
+          rm -f docs/resources/images/maya_python_logo.png
+          
+          # Rename template logo
+          mv docs/resources/images/_maya_python_logo.png docs/resources/images/maya_python_logo.png
 
       - name: Set up Python
         uses: actions/setup-python@v5

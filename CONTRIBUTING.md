@@ -42,18 +42,21 @@
 ## Contributing
 1. Fork the Project.
 2. Create your Feature Branch (`git checkout -b feature_name`).
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`).
+3. Commit your Changes (`git commit -m 'feat: Add some AmazingFeature'`).
 4. Push to the Branch (`git push origin feature_name`).
 5. Open a Pull Request.
 
 ### Commit Messages:
-This project uses [Python Semantic Release](https://python-semantic-release.readthedocs.io/en/latest/). When committing changes, please follow the [commit message convention](https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#commits) to ensure your changes are correctly versioned in any future releases.
+This project (optionally) uses [Python Semantic Release](https://python-semantic-release.readthedocs.io/en/latest/). To use this feature, please follow the [commit message convention](https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#commits) to ensure changes are correctly versioned in any future releases.
  
 Cheat sheet:
  
-- `fix`: Patch release, backwards-compatible bug fix _in git commit message title_.
-- `feat`: Minor release, backwards-compatible feature _in git commit message title_.
-- `BREAKING CHANGE`: Major release, incompatible API change _in git commit msg footer (use `fix` or `feat` for message title)_.
+- Patch release, backwards-compatible bug `fix` _in git commit message title_, e.g. 
+  - `git commit -m 'fix: a great fix'`
+- Minor release, backwards-compatible `feat` _in git commit message title_.
+  - `git commit -m 'feat: Add some AmazingFeature'`
+- Major release, incompatible API change `BREAKING CHANGE` _in git commit msg footer (use `fix` or `feat` for message title)_.
+  - `git commit -m 'feat: Add some AmazingFeature\n\nBREAKING CHANGE'`
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -61,7 +64,7 @@ Cheat sheet:
 
 ## Project Dependencies
 > <h4>Update to reflect the new project's specific requirements!<br><br>
-> The below instructions assume a virtual environment created from mayapy is being used for the project, with ,
+> The below instructions assume a virtual environment created from mayapy is being used for the project,
 > for more info see: https://help.autodesk.com/view/MAYACRE/ENU/?guid=GUID-6AF99E9C-1473-481E-A144-357577A53717.</h4> 
 
 Project dependencies are available in the [requirements.in](requirements.in) file, which should be compiled with [pip-tools](https://github.com/jazzband/pip-tools). 
