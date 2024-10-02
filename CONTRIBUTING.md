@@ -51,12 +51,12 @@ This project (optionally) uses [Python Semantic Release](https://python-semantic
  
 Cheat sheet:
  
-- Patch release, backwards-compatible bug `fix` _in git commit message title_, e.g. 
-  - `git commit -m 'fix: a great fix'`
+- Patch release, backwards-compatible bug `fix` _in git commit message title_. 
+  - `git commit -a -m "fix: a great fix"`
 - Minor release, backwards-compatible `feat` _in git commit message title_.
-  - `git commit -m 'feat: Add some AmazingFeature'`
-- Major release, incompatible API change `BREAKING CHANGE` _in git commit msg footer (use `fix` or `feat` for message title)_.
-  - `git commit -m 'feat: Add some AmazingFeature\n\nBREAKING CHANGE'`
+  - `git commit -a -m "feat: a wonderful new feature"`
+- Major release, incompatible API change `BREAKING CHANGE` _in git commit message footer (use `fix` or `feat` for message title)_.
+  - `git commit -a -m "feat: total refactor" -m "BREAKING CHANGE: breaks api"`
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
