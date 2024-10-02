@@ -10,13 +10,12 @@ jobs:
     uses: ./.github/workflows/reusable-static-analysis.yml
 
   tests:
-    needs: static-analysis
     if: github.repository != 'mattdeform/MayaPythonProjectTemplate'
     uses: ./.github/workflows/reusable-maya-tests.yml
 
   do_release:
     if: github.repository != 'mattdeform/MayaPythonProjectTemplate'
-    needs: [static-analysis, tests]
+    needs: [tests]
     uses: ./.github/workflows/reusable-semantic-release.yml
     permissions:
       contents: write
@@ -24,7 +23,7 @@ jobs:
 
   docs:
     if: github.repository != 'mattdeform/MayaPythonProjectTemplate'
-    needs: [static-analysis, tests, do_release]  # only build docs when release is successful
+    needs: [tests, do_release]  # only build docs when release is successful
     uses: ./.github/workflows/reusable-build-and-deploy-docs.yml
     permissions:
       contents: write

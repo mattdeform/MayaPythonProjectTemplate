@@ -16,15 +16,14 @@
 <h3 align="center">Maya Python Project Template</h3>
 
   <p align="center">
-    A GitHub template for Maya Python tools.
-    <br />
+    A GitHub template for Maya Python tools by <a href="https://www.techartops.com">TechArtOps</a>.<br>
     <a href="https://github.com/mattdeform/MayaPythonProjectTemplate/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     ·
     <a href="https://github.com/mattdeform/MayaPythonProjectTemplate/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
   </p>
 </div>
 
-
+> Example project built using this template can be found [here](https://github.com/mattdeform/locator_creator). 
 
 ## HOW TO USE THIS TEMPLATE
 
@@ -39,20 +38,20 @@
 
 ## What is included in this template?
 * Basic project structure.
-* [README.md](_README.md) template.
-* [CONTRIBUTING.md](CONTRIBUTING.md) template.
+* [README.md](_README) and [CONTRIBUTING](CONTRIBUTING.md) templates.
 * Bug report and feature request templates.
 * Continuous integration using [GitHub Actions][github-actions-url] with jobs to:
-  * [Run tests](.github/workflows/reusable-maya-tests.yml) in containerized Maya. `Note: User should hold a valid Maya license.`
+  * [Run integration tests](.github/workflows/reusable-maya-tests.yml) across a range of Maya versions in isolated Docker containers. 
+    * `Note: You should hold a valid Maya license.`
   * [Enforce coding standards](.github/workflows/reusable-static-analysis.yml) with [pylint](https://pypi.org/project/pylint/), [black](https://github.com/psf/black), and [mypy](https://mypy.readthedocs.io/en/stable/).
   * [Build and deploy documentation](.github/workflows/reusable-build-and-deploy-docs.yml) to GitHub pages with [mkdocs](https://www.mkdocs.org/).
-  * [Make versioned releases](.github/workflows/ci-release.yml) using python semantic versioning.
+  * [Automated releases](.github/workflows/ci-release.yml) using Python Semantic Versioning (optional).
 
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 * This project uses Docker images courtesy of [mottosso/docker-maya](https://github.com/mottosso/docker-maya).
-* Inspiration taken from both 
+* Inspiration taken from both:
   * [python-project-template](https://github.com/rochacbruno/python-project-template/tree/main).
   * [Best-README-Template](https://github.com/othneildrew/Best-README-Template).
 

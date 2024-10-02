@@ -154,9 +154,9 @@ Please reach out via the [request a feature](https://github.com/{{PROJECT_OWNER}
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
+* Project template by [TechArtOps](https://www.techartops.com).
 * foo
 * bar
-* baz
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
