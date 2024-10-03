@@ -16,7 +16,7 @@
 <h3 align="center">Maya Python Project Template</h3>
 
   <p align="center">
-    A GitHub template for Maya Python tools by <a href="https://www.techartops.com">TechArtOps</a>.<br>
+    A GitHub template for Maya Python tools<br>
     <a href="https://github.com/mattdeform/MayaPythonProjectTemplate/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     ·
     <a href="https://github.com/mattdeform/MayaPythonProjectTemplate/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
